@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 180" role="img" aria-labelledby="title">
+  <title id="title">黑粉蝴蝶结贴纸</title>
+  <g stroke="#171217" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M116 92C83 54 31 43 22 76c-8 31 26 61 60 58 16-1 26-12 34-42Z" fill="#171217"/>
+    <path d="M144 92c33-38 85-49 94-16 8 31-26 61-60 58-16-1-26-12-34-42Z" fill="#171217"/>
+    <path d="M104 82C80 59 48 53 41 73c-6 19 17 38 40 36 10-1 16-7 23-27Z" fill="#ff2e7e" stroke-width="4"/>
+    <path d="M156 82c24-23 56-29 63-9 6 19-17 38-40 36-10-1-16-7-23-27Z" fill="#ff2e7e" stroke-width="4"/>
+    <path d="M110 126c-8 22-21 34-36 37M150 126c8 22 21 34 36 37" fill="none" stroke="#ff2e7e" stroke-width="6"/>
+    <rect x="106" y="75" width="48" height="55" rx="16" fill="#b58cff"/>
+    <path d="M130 86c9 0 16 6 16 14 0 9-8 15-16 24-8-9-16-15-16-24 0-8 7-14 16-14Z" fill="#fff1f6" stroke-width="4"/>
+    <circle cx="124" cy="98" r="3" fill="#171217" stroke="none"/>
+    <circle cx="136" cy="98" r="3" fill="#171217" stroke="none"/>
+    <path d="M126 107h8" stroke="#171217" stroke-width="3"/>
+    <path d="M96 62l-12-9M164 62l12-9M100 72l-10-3M160 72l10-3" stroke="#fff1f6" stroke-width="3"/>
+  </g>
+</svg>

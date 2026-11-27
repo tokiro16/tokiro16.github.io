@@ -4,7 +4,7 @@
 
 线上地址：<https://tokiro16.github.io/>
 
-甜酷黑粉配色、圆润可爱的手写字体、拍立得式照片、库洛米风小恶魔贴纸、深浅色模式、文章搜索、标签归档、RSS 与 SEO 都已经准备好。内容围绕玩乐、游戏、物理、八卦、计算机与美妆穿搭展开，目前保留了一篇真实的串流折腾日志。
+甜酷黑粉配色、圆润可爱的手写字体、拍立得式照片、深浅色模式、文章搜索、标签归档、RSS 与 SEO 都已经准备好。内容围绕玩乐、游戏、物理、八卦、计算机与美妆穿搭展开，目前保留了一篇真实的串流折腾日志。
 
 ![时六博客预览](docs/preview.jpg)
 
@@ -182,11 +182,12 @@ BASE_PATH: /
 | `npm run build` | 生成静态站点到 `dist/` |
 | `npm run preview` | 本地预览构建结果 |
 | `npm run og` | 重新生成 `public/og.png` |
+| `npm run bg` | 重新生成背景图 `src/assets/images/kuromi-bg.jpg` |
 
 ## 说明
 
 - 标题和正文使用 ZCOOL KuaiLe（SIL Open Font License 1.1），授权文件在 `src/assets/fonts/OFL.txt`。
-- 背景贴纸是原创的库洛米风小恶魔矢量图，放在 `public/stickers/`，没有使用官方素材。
+- 背景图由 `src/assets/stickers/` 里的贴纸合成，图片在 `src/assets/images/kuromi-bg.jpg`；重新生成用 `npm run bg`。
 - 文章正文由 `marked` 在构建时转成 HTML，文章来自你自己的仓库，属于可信内容。
 - 搜索索引在构建时生成到 `search.json`，不会请求任何第三方服务。
 - 站内链接统一经过 `src/lib/urls.ts` 处理，因此项目页和自定义域名都能正常工作。
