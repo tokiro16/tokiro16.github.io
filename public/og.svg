@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title">
-  <title id="title">时六 SHILIU — 在游戏与公式之间，随手记点</title>
+  <title id="title">时六 SHILIU — 游戏、物理、计算机，还有一些日常</title>
   <defs>
     <filter id="grain">
       <feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="3" stitchTiles="stitch"/>
@@ -22,7 +22,7 @@
   <text x="78" y="110" fill="#171217" font-family="Arial, sans-serif" font-size="16" letter-spacing="8" opacity=".64">SHILIU / SWEET &amp; COOL</text>
   <text x="76" y="384" fill="#ff2e7e" font-family="'Songti SC', 'SimSun', Georgia, serif" font-size="190" letter-spacing="12" opacity=".3">时六</text>
   <text x="72" y="380" fill="#171217" font-family="'Songti SC', 'SimSun', Georgia, serif" font-size="190" letter-spacing="12">时六</text>
-  <text x="80" y="450" fill="#171217" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-style="italic" letter-spacing="1" opacity=".82">play. think. repeat.</text>
+  <text x="80" y="450" fill="#171217" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-style="italic" letter-spacing="1" opacity=".82">games, physics, and whatever.</text>
   <path d="M80 492h320" stroke="#ff2e7e" stroke-width="2"/>
   <text x="80" y="538" fill="#171217" font-family="Arial, sans-serif" font-size="15" letter-spacing="3" opacity=".58">玩乐 · 游戏 · 物理 · 八卦 · 计算机 · 美妆穿搭</text>
   <text x="1116" y="552" fill="#171217" font-family="Georgia, serif" font-size="14" letter-spacing="4" text-anchor="end" opacity=".56">EST. 2026</text>

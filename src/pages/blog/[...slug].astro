@@ -92,7 +92,7 @@ const jsonLd = {
     <div class="container article-layout">
       {post.toc.length > 0 && (
         <aside class="toc" aria-label="文章目录">
-          <p class="toc-label">Contents / 目录</p>
+          <p class="toc-label">目录</p>
           <ol>
             {post.toc.map((item) => (
               <li data-depth={item.depth}>
@@ -107,18 +107,18 @@ const jsonLd = {
 
       <aside class="article-aside" aria-label="文章信息">
         <div class="article-aside-inner">
-          <span class="article-aside-label">Colophon / 本文</span>
+          <span class="article-aside-label">本文</span>
           <span class="aside-rule" aria-hidden="true"></span>
           <p>写于 {formatDate(post.date)}<br />{SITE.location}</p>
           {post.updated && <p>最后更新于 {formatDate(post.updated)}</p>}
-          <p>全文约 {post.readingTime} 分钟阅读。未经允许，请勿转载。</p>
+          <p>大概 {post.readingTime} 分钟能看完。转载请先问我。</p>
         </div>
       </aside>
     </div>
 
     <footer class="container article-footer">
       <div class="article-sign">
-        <p>谢谢你读到这里。如果愿意，欢迎从 RSS 订阅这个博客。</p>
+        <p>看到这里，谢了。想追更可以订 RSS。</p>
         <span class="sign-mark" aria-hidden="true">{SITE.name.slice(0, 1)}</span>
       </div>
 
@@ -135,8 +135,8 @@ const jsonLd = {
       <section class="related container">
         <div class="section-head">
           <div class="section-heading">
-            <span class="eyebrow">Keep reading / 继续阅读</span>
-            <h2 class="section-title">也许你会喜欢</h2>
+            <span class="eyebrow">继续看</span>
+            <h2 class="section-title">相关文章</h2>
           </div>
           <a class="section-link" href={url('/blog/')}>全部文章 <Icon name="arrow-up-right" size={12} /></a>
         </div>
@@ -152,13 +152,13 @@ const jsonLd = {
     <nav class="post-nav container" aria-label="文章导航">
       {previous && (
         <a href={previous.href}>
-          <span class="nav-label">← Previous / 上一篇</span>
+          <span class="nav-label">← 上一篇</span>
           <span class="nav-title">{previous.title}</span>
         </a>
       )}
       {next && (
         <a href={next.href}>
-          <span class="nav-label">Next / 下一篇 →</span>
+          <span class="nav-label">下一篇 →</span>
           <span class="nav-title">{next.title}</span>
         </a>
       )}

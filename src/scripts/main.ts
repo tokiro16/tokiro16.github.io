@@ -115,7 +115,7 @@ function loadSearchIndex(): Promise<void> {
     })
     .catch(() => {
       if (searchResults) {
-        searchResults.innerHTML = '<p class="search-empty">搜索索引加载失败，请刷新页面后重试。</p>';
+        searchResults.innerHTML = '<p class="search-empty">搜索没加载出来，刷新一下试试。</p>';
       }
     });
 
@@ -172,8 +172,8 @@ function renderSearch(query: string) {
   if (visibleResults.length === 0) {
     searchResults.innerHTML = `
       <div class="search-empty">
-        没有找到「${escapeHtml(normalized)}」<br />
-        <span style="font-size: .75rem; opacity: .7">试试更短的关键词，或浏览全部文章。</span>
+        没找到「${escapeHtml(normalized)}」<br />
+        <span style="font-size: .75rem; opacity: .7">换个短一点的关键词试试，或者去看全部文章。</span>
       </div>
     `;
     return;

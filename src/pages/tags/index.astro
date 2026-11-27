@@ -4,20 +4,19 @@ import { getAllTags } from '../../lib/posts';
 import { url } from '../../lib/urls';
 
 const tags = getAllTags();
-const total = tags.reduce((sum, item) => sum + item.count, 0);
 ---
 
 <BaseLayout
   title="标签"
-  description="按标签浏览时六博客的所有文章：玩乐、游戏、物理、八卦、计算机与美妆穿搭。"
+  description="按时六博客的标签找文章。"
 >
   <header class="page-header container">
     <div>
       <p class="eyebrow">Tags / 标签</p>
-      <h1 class="page-title">按<em>标签</em>读。</h1>
+      <h1 class="page-title">按<em>标签</em>看。</h1>
     </div>
     <p class="page-intro">
-      共 <strong>{tags.length} 个标签</strong>，{total} 次归类。它们像抽屉上的小纸条，帮你找到相似的东西。
+      共 <strong>{tags.length} 个标签</strong>。点一个，看看写了些什么。
     </p>
   </header>
 

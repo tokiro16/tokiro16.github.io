@@ -21,7 +21,7 @@ const { tag, posts } = Astro.props;
 
 <BaseLayout
   title={`标签：${tag}`}
-  description={`时六博客中所有关于「${tag}」的文章，共 ${posts.length} 篇。`}
+  description={`时六写的关于「${tag}」的文章，共 ${posts.length} 篇。`}
 >
   <header class="page-header container">
     <div>
@@ -29,7 +29,7 @@ const { tag, posts } = Astro.props;
       <h1 class="page-title">#<em>{tag}</em></h1>
     </div>
     <p class="page-intro">
-      共 <strong>{posts.length} 篇文章</strong>归在这个标签下。标签不是分类，只是一些愿意彼此靠近的句子。
+      标了这个标签的，一共 <strong>{posts.length} 篇</strong>。
     </p>
   </header>
 
