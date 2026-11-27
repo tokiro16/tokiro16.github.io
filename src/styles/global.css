@@ -2,6 +2,14 @@
    时六 SHILIU — global styles
    ========================================================================== */
 
+@font-face {
+  font-family: 'ZCOOL KuaiLe';
+  src: url('../assets/fonts/ZCOOLKuaiLe-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 @layer reset, tokens, base, layout, components, pages, utilities, motion, skin;
 
 @layer reset {
@@ -87,8 +95,9 @@
     --code-bg: #171217;
     --code-ink: #fff1f6;
 
-    --font-serif: 'Iowan Old Style', 'Baskerville', 'Palatino Linotype', 'Songti SC',
-      'SimSun', 'Noto Serif CJK SC', 'Source Han Serif SC', serif;
+    --font-cute: 'ZCOOL KuaiLe', 'Yuanti SC', 'YouYuan', 'PingFang SC',
+      'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    --font-serif: var(--font-cute);
     --font-sans: 'Inter', 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB',
       'Microsoft YaHei', sans-serif;
     --font-mono: 'JetBrains Mono', 'SFMono-Regular', 'Cascadia Code', Consolas, monospace;
@@ -3557,6 +3566,127 @@
     }
   }
 
+  /* ---------- cute type + stickers ---------- */
+  main {
+    position: relative;
+    z-index: 2;
+  }
+
+  .site-footer {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-title,
+  .section-title,
+  .page-title,
+  .about-title,
+  .about-band-title,
+  .featured-title,
+  .card-title,
+  .post-row-title,
+  .article-title,
+  .topic-name,
+  .footer-wordmark,
+  .not-found h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .about-prose h2,
+  .search-result-title,
+  .brand-name,
+  .mobile-menu a {
+    font-weight: 400;
+  }
+
+  .hero-title {
+    letter-spacing: -0.035em;
+  }
+
+  .sticker-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .sticker {
+    --r: 0deg;
+    position: absolute;
+    height: auto;
+    opacity: 0.52;
+    filter: drop-shadow(4px 5px 0 rgba(23, 18, 23, 0.12));
+    transform: rotate(var(--r));
+    animation: stickerFloat 8s ease-in-out infinite;
+  }
+
+  .sticker--devil {
+    --r: 9deg;
+    top: 10%;
+    right: 1.2%;
+    width: clamp(88px, 8.5vw, 132px);
+  }
+
+  .sticker--bow {
+    --r: -13deg;
+    top: 36%;
+    left: 1%;
+    width: clamp(58px, 6vw, 90px);
+    opacity: 0.44;
+    animation-delay: -2.2s;
+  }
+
+  .sticker--heart {
+    --r: -8deg;
+    top: 64%;
+    right: 1.5%;
+    width: clamp(66px, 7vw, 104px);
+    opacity: 0.5;
+    animation-delay: -4.4s;
+  }
+
+  .sticker--star {
+    --r: 15deg;
+    bottom: 7%;
+    left: 2%;
+    width: clamp(48px, 5vw, 76px);
+    opacity: 0.4;
+    animation-delay: -1.1s;
+  }
+
+  @keyframes stickerFloat {
+    0%,
+    100% {
+      transform: translateY(0) rotate(var(--r));
+    }
+    50% {
+      transform: translateY(-9px) rotate(var(--r));
+    }
+  }
+
+  @media (max-width: 860px) {
+    .sticker--devil {
+      top: 14%;
+      right: -12px;
+      width: 68px;
+      opacity: 0.3;
+    }
+
+    .sticker--bow,
+    .sticker--heart {
+      display: none;
+    }
+
+    .sticker--star {
+      bottom: 8%;
+      left: -12px;
+      width: 52px;
+      opacity: 0.26;
+    }
+
+  }
+
   @keyframes twinkle {
     0%,
     100% {
@@ -3570,7 +3700,8 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .hero::before {
+    .hero::before,
+    .sticker {
       animation: none;
     }
   }

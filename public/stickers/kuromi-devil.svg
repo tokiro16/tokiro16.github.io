@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300" role="img" aria-labelledby="title">
+  <title id="title">黑粉小恶魔兔贴纸</title>
+  <g stroke="#171217" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M188 238c31 8 29 36 12 46" fill="none" stroke-width="9"/>
+    <circle cx="202" cy="286" r="9" fill="#ff2e7e"/>
+    <path d="M58 132C29 96 17 54 38 35c21-17 43 12 60 65" fill="#171217"/>
+    <path d="M182 132c29-36 41-78 20-97-21-17-43 12-60 65" fill="#171217"/>
+    <path d="M61 113C43 84 37 60 47 49c11-10 24 9 37 49" fill="#ff2e7e" stroke-width="4"/>
+    <path d="M179 113c18-29 24-53 14-64-11-10-24 9-37 49" fill="#ff2e7e" stroke-width="4"/>
+    <circle cx="38" cy="32" r="12" fill="#ffc1d7"/>
+    <circle cx="202" cy="32" r="12" fill="#ffc1d7"/>
+    <path d="M42 126c0-44 34-74 78-74s78 30 78 74v102c0 23-18 40-41 40H83c-23 0-41-17-41-40Z" fill="#171217"/>
+    <path d="M64 140c7-16 20-24 34-24M176 140c-7-16-20-24-34-24" fill="none" stroke="#ff2e7e" stroke-width="4"/>
+    <ellipse cx="120" cy="170" rx="59" ry="61" fill="#fff1f6"/>
+    <path d="M104 190q16 13 32 0" fill="none" stroke-width="5"/>
+    <path d="m120 180-6 8h12Z" fill="#171217" stroke-width="3"/>
+    <ellipse cx="96" cy="164" rx="9" ry="13" fill="#171217" stroke="none"/>
+    <ellipse cx="144" cy="164" rx="9" ry="13" fill="#171217" stroke="none"/>
+    <circle cx="99" cy="160" r="3" fill="#fff1f6" stroke="none"/>
+    <circle cx="147" cy="160" r="3" fill="#fff1f6" stroke="none"/>
+    <circle cx="77" cy="190" r="8" fill="#ff8db8" stroke="none" opacity=".8"/>
+    <circle cx="163" cy="190" r="8" fill="#ff8db8" stroke="none" opacity=".8"/>
+    <path d="M120 104c8 0 14 6 14 13 0 9-7 15-14 21-7-6-14-12-14-21 0-7 6-13 14-13Z" fill="#ff2e7e" stroke-width="4"/>
+    <circle cx="115" cy="116" r="2.6" fill="#171217" stroke="none"/>
+    <circle cx="125" cy="116" r="2.6" fill="#171217" stroke="none"/>
+    <path d="M92 236c-24-16-43-8-37 13 5 18 27 17 40 1Z" fill="#ff2e7e"/>
+    <path d="M148 236c24-16 43-8 37 13-5 18-27 17-40 1Z" fill="#ff2e7e"/>
+    <circle cx="120" cy="244" r="11" fill="#b58cff"/>
+    <path d="M120 251v27M108 271l12 9 12-9" fill="none" stroke="#ff2e7e" stroke-width="5"/>
+  </g>
+</svg>

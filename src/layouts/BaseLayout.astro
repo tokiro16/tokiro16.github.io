@@ -4,6 +4,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SearchDialog from '../components/SearchDialog.astro';
+import StickerLayer from '../components/StickerLayer.astro';
 
 interface Props {
   title?: string;
@@ -46,6 +47,7 @@ const base = import.meta.env.BASE_URL;
     <slot name="head" />
   </head>
   <body id="top" data-base={base}>
+    <StickerLayer />
     <a class="skip-link" href="#main">跳到正文</a>
     {progress && <div class="reading-progress" data-reading-progress aria-hidden="true"></div>}
 
