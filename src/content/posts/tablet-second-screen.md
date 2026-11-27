@@ -5,7 +5,7 @@ date: 2026-11-27
 category: 计算机
 tags: [Sunshine, Moonlight, 串流, 平板, 折腾]
 cover: tablet-second-screen.jpg
-featured: true
+featured: false
 ---
 
 今天把平板同时当成了副屏和手柄接收器。

@@ -10,7 +10,7 @@ interface Props {
 
 const { name, alt, loading = 'lazy', class: className } = Astro.props;
 const file = /\.[a-z0-9]+$/i.test(name) ? name : `${name}.svg`;
-const src = url(`/covers/${file}`);
+const src = name.startsWith('/') ? url(name) : url(`/covers/${file}`);
 ---
 
 <img

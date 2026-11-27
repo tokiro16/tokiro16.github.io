@@ -1,0 +1,183 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import { PHOTOS } from '../data/photos';
+import { formatDate } from '../lib/format';
+import { url } from '../lib/urls';
+import '../styles/gallery.css';
+
+const photos = PHOTOS.map((photo) => ({
+  ...photo,
+  src: url(photo.src),
+  href: url(photo.href),
+}));
+
+const kinds = ['全部', ...new Set(PHOTOS.map((photo) => photo.kind))];
+---
+
+<BaseLayout
+  title="相册"
+  description="时六博客里用过的所有照片，可以按类型筛选、搜索，并跳到对应日志或页面。"
+>
+  <header class="page-header container">
+    <div>
+      <p class="eyebrow">Photos / 相册</p>
+      <h1 class="page-title">所有<br /><em>照片。</em></h1>
+    </div>
+    <p class="page-intro">
+      站里用过的照片都在这里。点开看大图，也可以顺着链接去看它出现的日志或页面。
+    </p>
+  </header>
+
+  <div class="container">
+    <div class="album-toolbar">
+      <label class="album-search">
+        <Icon name="search" size={16} />
+        <input type="search" placeholder="搜索照片、猫或页面…" data-photo-search />
+      </label>
+
+      <div class="album-filters" aria-label="照片分类">
+        {kinds.map((kind) => (
+          <button
+            class:list={['filter-chip', { 'is-active': kind === '全部' }]}
+            type="button"
+            data-photo-kind={kind}
+          >
+            {kind}
+          </button>
+        ))}
+      </div>
+
+      <span class="album-count" data-photo-count>{photos.length} 张</span>
+    </div>
+
+    <div class="album-grid" data-album-grid>
+      {photos.map((photo) => (
+        <figure
+          class="album-card"
+          data-photo-card
+          data-kind={photo.kind}
+          data-search={`${photo.title} ${photo.description} ${photo.tags.join(' ')} ${photo.pageLabel} ${photo.kind}`}
+        >
+          <button
+            class="album-image"
+            type="button"
+            aria-label={`查看大图：${photo.title}`}
+            data-photo-open
+            data-src={photo.src}
+            data-alt={photo.alt}
+            data-title={photo.title}
+            data-description={photo.description}
+            data-href={photo.href}
+            data-page-label={photo.pageLabel}
+          >
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              width={photo.width}
+              height={photo.height}
+              loading="eager"
+              decoding="async"
+            />
+            <span class="album-zoom">查看大图</span>
+          </button>
+
+          <figcaption>
+            <div class="album-meta">
+              <span class="album-kind">{photo.kind}</span>
+              <time datetime={photo.date}>{formatDate(photo.date)}</time>
+            </div>
+            <h2 class="album-title">{photo.title}</h2>
+            <p class="album-desc">{photo.description}</p>
+            <a class="album-link" href={photo.href}>去{photo.pageLabel} ↗</a>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+
+    <p class="search-empty" data-photo-empty hidden>没有找到这样的照片。</p>
+    <div style="height: clamp(2rem, 5vw, 4rem);"></div>
+  </div>
+
+  <dialog class="photo-dialog" id="photo-dialog" aria-labelledby="photo-dialog-title">
+    <div class="photo-dialog-inner">
+      <button class="photo-dialog-close" type="button" data-photo-close aria-label="关闭大图">关闭</button>
+      <div class="photo-dialog-media">
+        <img data-photo-image alt="" />
+      </div>
+      <div class="photo-dialog-copy">
+        <span class="eyebrow">Photo / 照片</span>
+        <h2 id="photo-dialog-title" data-photo-title></h2>
+        <p data-photo-description></p>
+        <a class="text-link" href="#" data-photo-link>去看看</a>
+      </div>
+    </div>
+  </dialog>
+</BaseLayout>
+
+<script>
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-photo-card]'));
+  const search = document.querySelector<HTMLInputElement>('[data-photo-search]');
+  const kindButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-photo-kind]'));
+  const count = document.querySelector<HTMLElement>('[data-photo-count]');
+  const empty = document.querySelector<HTMLElement>('[data-photo-empty]');
+  let activeKind = '全部';
+
+  function applyFilter() {
+    const query = (search?.value || '').trim().toLowerCase();
+    let visible = 0;
+
+    for (const card of cards) {
+      const matchKind = activeKind === '全部' || card.dataset.kind === activeKind;
+      const matchQuery = !query || (card.dataset.search || '').toLowerCase().includes(query);
+      const show = matchKind && matchQuery;
+      card.hidden = !show;
+      if (show) visible += 1;
+    }
+
+    kindButtons.forEach((button) => {
+      button.classList.toggle('is-active', button.dataset.photoKind === activeKind);
+    });
+
+    if (count) count.textContent = `${visible} 张`;
+    if (empty) empty.hidden = visible !== 0;
+  }
+
+  kindButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      activeKind = button.dataset.photoKind || '全部';
+      applyFilter();
+    });
+  });
+
+  search?.addEventListener('input', applyFilter);
+
+  const dialog = document.querySelector<HTMLDialogElement>('#photo-dialog');
+  const dialogImage = document.querySelector<HTMLImageElement>('[data-photo-image]');
+  const dialogTitle = document.querySelector<HTMLElement>('[data-photo-title]');
+  const dialogDescription = document.querySelector<HTMLElement>('[data-photo-description]');
+  const dialogLink = document.querySelector<HTMLAnchorElement>('[data-photo-link]');
+  const closeButton = document.querySelector<HTMLButtonElement>('[data-photo-close]');
+
+  document.querySelectorAll<HTMLButtonElement>('[data-photo-open]').forEach((button) => {
+    button.addEventListener('click', () => {
+      if (!dialog || !dialogImage || !dialogTitle || !dialogDescription || !dialogLink) return;
+
+      dialogImage.src = button.dataset.src || '';
+      dialogImage.alt = button.dataset.alt || '';
+      dialogTitle.textContent = button.dataset.title || '';
+      dialogDescription.textContent = button.dataset.description || '';
+      dialogLink.href = button.dataset.href || '#';
+      dialogLink.textContent = `去${button.dataset.pageLabel || '看看'} ↗`;
+
+      dialog.showModal();
+      closeButton?.focus();
+    });
+  });
+
+  closeButton?.addEventListener('click', () => dialog?.close());
+
+  dialog?.addEventListener('click', (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+</script>

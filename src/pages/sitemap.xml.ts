@@ -13,6 +13,7 @@ export const GET: APIRoute = async ({ site }) => {
   const entries: { path: string; lastmod: string; priority: string }[] = [
     { path: '/', lastmod: latest, priority: '1.0' },
     { path: '/blog/', lastmod: latest, priority: '0.9' },
+    { path: '/photos/', lastmod: latest, priority: '0.7' },
     { path: '/tags/', lastmod: latest, priority: '0.6' },
     { path: '/about/', lastmod: latest, priority: '0.5' },
     ...posts.map((post) => ({

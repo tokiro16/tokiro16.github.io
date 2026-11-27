@@ -3215,6 +3215,31 @@
     color: rgba(255, 241, 246, 0.7);
   }
 
+  @media (min-width: 861px) {
+    .topic-card:last-child:nth-child(3n + 1) {
+      grid-column: span 3;
+      min-height: 8.5rem;
+      flex-direction: row;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .topic-card:last-child:nth-child(3n + 1) > span:last-child {
+      display: flex;
+      gap: 1.4rem;
+      align-items: baseline;
+    }
+
+    .topic-card:last-child:nth-child(3n + 1) .topic-name {
+      margin-top: 0;
+    }
+
+    .topic-card:last-child:nth-child(3n + 1) .topic-desc {
+      max-width: 26rem;
+      margin-top: 0;
+    }
+  }
+
   /* ---------- about band ---------- */
   .about-band {
     position: relative;
@@ -3361,6 +3386,23 @@
   .prose img {
     border: 1px solid var(--line);
     border-radius: 16px;
+  }
+
+  .prose figure {
+    margin-block: 2rem;
+  }
+
+  .prose figure img {
+    margin-block: 0;
+  }
+
+  .prose figcaption {
+    margin-top: 0.65rem;
+    color: var(--muted);
+    font-family: var(--font-cute);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    text-align: center;
   }
 
   .prose pre {
