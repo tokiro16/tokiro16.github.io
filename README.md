@@ -4,7 +4,7 @@
 
 线上地址：<https://tokiro16.github.io/>
 
-暖色纸张质感、杂志式排版、深浅色模式、文章搜索、标签归档、RSS 与 SEO 都已经准备好。内容围绕玩乐、游戏、物理、八卦、计算机与美妆穿搭展开，目前保留了一篇真实的串流折腾日志。
+甜酷黑粉配色、拍立得式照片、杂志排版、深浅色模式、文章搜索、标签归档、RSS 与 SEO 都已经准备好。内容围绕玩乐、游戏、物理、八卦、计算机与美妆穿搭展开，目前保留了一篇真实的串流折腾日志。
 
 ![时六博客预览](docs/preview.jpg)
 
@@ -92,9 +92,9 @@ draft: false
 
 内置封面在 `public/covers/`：`orbit`、`grid`、`type`、`arch`、`wave`、`mono`、`bloom`。也可以把自己的图片放进 `public/covers/`，然后把 `cover` 写成文件名。
 
-### 3. 头像 / 个人介绍
+### 3. 照片 / 个人介绍
 
-编辑 `src/pages/about.astro` 里的文字和「现在」列表。关于页目前使用抽象图形作为头像位，想换成照片的话，把图片放进 `public/`，再替换 `.about-portrait` 里的内容即可。
+首页主视觉使用 `public/images/shiliu-cool.jpg`，关于页使用 `public/images/shiliu-sweet.jpg`。想换照片时，直接替换这两张图（建议 3:4 竖图，宽度 900px 左右），再编辑 `src/pages/about.astro` 里的文字和「现在」列表即可。
 
 ## 部署到 GitHub Pages
 
@@ -157,7 +157,8 @@ BASE_PATH: /
 ├─ .github/workflows/deploy.yml   # GitHub Pages 自动部署
 ├─ docs/preview.jpg               # README 预览图
 ├─ public/
-│  ├─ covers/                     # 抽象封面 SVG
+│  ├─ covers/                     # 封面图
+│  ├─ images/                     # 首页与关于页照片
 │  ├─ favicon.svg
 │  └─ og.png                      # 社交分享图
 ├─ src/

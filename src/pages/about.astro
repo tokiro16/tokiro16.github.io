@@ -18,15 +18,23 @@ import { url } from '../lib/urls';
       </p>
     </div>
 
-    <div class="about-portrait" aria-hidden="true">
-      <div class="portrait-caption">
+    <figure class="about-portrait about-portrait--photo">
+      <img
+        src={url('/images/shiliu-sweet.jpg')}
+        alt="时六的生活照"
+        width="900"
+        height="1200"
+        loading="eager"
+      />
+      <span class="portrait-sticker" aria-hidden="true">SWEET</span>
+      <figcaption class="portrait-caption">
         <span>
           <strong>{SITE.author}</strong>
           {SITE.location}
         </span>
         <span>PORTRAIT<br />{SITE.since} — NOW</span>
-      </div>
-    </div>
+      </figcaption>
+    </figure>
   </section>
 
   <div class="container about-body">
