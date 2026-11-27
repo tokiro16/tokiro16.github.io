@@ -1,0 +1,45 @@
+---
+import { SITE, NAV } from '../config';
+import { url } from '../lib/urls';
+import Icon from './Icon.astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <p class="footer-wordmark">
+          {SITE.name}
+          <span>{SITE.latin} — A SMALL PLACE ON THE INTERNET</span>
+        </p>
+      </div>
+
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h3>Navigate</h3>
+          <ul>
+            {NAV.map((item) => <li><a href={url(item.href)}>{item.label}</a></li>)}
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Elsewhere</h3>
+          <ul>
+            {SITE.socials.map((social) => (
+              <li>
+                <a href={social.href} target="_blank" rel="noopener noreferrer">{social.label} ↗</a>
+              </li>
+            ))}
+            <li><a href={url('/rss.xml')}>RSS <Icon name="rss" size={11} /></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© {year} {SITE.author}. 保留所有文字与照片的版权。</p>
+      <p>用 Astro 构建 · 托管于 GitHub Pages · <a href="#top">回到顶部 ↑</a></p>
+    </div>
+  </div>
+</footer>

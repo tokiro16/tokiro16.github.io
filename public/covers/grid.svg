@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title">
+  <title id="title">深绿色网格与橙色方块</title>
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".1"/></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" fill="#18221d"/>
+  <g stroke="#9aa78c" stroke-opacity=".18" stroke-width="1">
+    <path d="M60 0v900M160 0v900M260 0v900M360 0v900M460 0v900M560 0v900M660 0v900M760 0v900M860 0v900M960 0v900M1060 0v900M1160 0v900"/>
+    <path d="M0 60h1200M0 160h1200M0 260h1200M0 360h1200M0 460h1200M0 560h1200M0 660h1200M0 760h1200M0 860h1200"/>
+  </g>
+  <rect x="710" y="180" width="340" height="340" fill="#d9542b"/>
+  <circle cx="880" cy="350" r="118" fill="none" stroke="#f0e9dc" stroke-width="1.3"/>
+  <path d="M880 232v236M762 350h236" stroke="#f0e9dc" stroke-width="1.3" opacity=".55"/>
+  <text x="78" y="118" fill="#aab08a" font-family="Arial, sans-serif" font-size="18" letter-spacing="8">02 / GAME</text>
+  <text x="72" y="660" fill="#f0e9dc" font-family="Georgia, 'Times New Roman', serif" font-size="176" letter-spacing="-7">PLAY</text>
+  <text x="78" y="760" fill="#f0e9dc" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-style="italic" letter-spacing="-2" opacity=".78">seriously.</text>
+  <text x="1116" y="805" fill="#aab08a" font-family="Arial, sans-serif" font-size="15" letter-spacing="4" text-anchor="end">SAVE / RELOAD / REPEAT</text>
+  <rect width="1200" height="900" filter="url(#grain)" opacity=".5"/>
+</svg>

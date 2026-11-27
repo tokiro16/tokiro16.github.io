@@ -1,0 +1,74 @@
+---
+import { SITE } from '../config';
+import { url } from '../lib/urls';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  publishedTime?: string;
+  modifiedTime?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = SITE.description,
+  image = '/og.png',
+  type = 'website',
+  publishedTime,
+  modifiedTime,
+  noindex = false,
+} = Astro.props;
+
+const pageTitle = title ? `${title} — ${SITE.title}` : `${SITE.title} · ${SITE.tagline}`;
+const site = Astro.site ?? new URL('https://tokiro16.github.io');
+const canonical = new URL(Astro.url.pathname, site).href;
+const imageUrl = new URL(url(image), site).href;
+const themeScript = `
+(() => {
+  try {
+    const stored = localStorage.getItem('shiliu-theme');
+    const dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+  } catch (error) {
+    document.documentElement.dataset.theme = 'light';
+  }
+  document.documentElement.classList.add('js');
+})();
+`;
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{pageTitle}</title>
+<meta name="description" content={description} />
+<meta name="author" content={SITE.author} />
+<meta name="theme-color" content="#f4efe6" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#141412" media="(prefers-color-scheme: dark)" />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex, follow" />}
+
+<link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
+<link rel="alternate" type="application/rss+xml" title={`${SITE.title} · RSS`} href={url('/rss.xml')} />
+<link rel="sitemap" type="application/xml" href={url('/sitemap.xml')} />
+
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={SITE.title} />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+{publishedTime && <meta property="article:published_time" content={publishedTime} />}
+{modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={pageTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+
+<script is:inline set:html={themeScript} />

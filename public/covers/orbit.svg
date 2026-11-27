@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title">
+  <title id="title">抽象轨道与橙色圆点</title>
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".12"/></feComponentTransfer>
+    </filter>
+    <radialGradient id="glow" cx="35%" cy="30%" r="70%">
+      <stop offset="0" stop-color="#f7eee0"/>
+      <stop offset="1" stop-color="#e4d8c5"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#glow)"/>
+  <rect x="42" y="42" width="1116" height="816" fill="none" stroke="#1a1916" stroke-opacity=".18"/>
+  <circle cx="770" cy="355" r="258" fill="#d9542b"/>
+  <g fill="none" stroke="#1a1916" stroke-width="1.1" opacity=".7">
+    <ellipse cx="770" cy="355" rx="448" ry="176" transform="rotate(-24 770 355)"/>
+    <ellipse cx="770" cy="355" rx="448" ry="176" transform="rotate(22 770 355)"/>
+    <ellipse cx="770" cy="355" rx="448" ry="176" transform="rotate(68 770 355)"/>
+  </g>
+  <circle cx="770" cy="355" r="10" fill="#1a1916"/>
+  <text x="80" y="116" fill="#1a1916" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="7">ISSUE 001 / 2026</text>
+  <text x="80" y="700" fill="#1a1916" font-family="Georgia, 'Times New Roman', serif" font-size="150" letter-spacing="-6">时六</text>
+  <text x="84" y="760" fill="#1a1916" font-family="Arial, sans-serif" font-size="18" letter-spacing="8" opacity=".62">ON PLAYING AROUND</text>
+  <text x="1116" y="805" fill="#1a1916" font-family="Georgia, serif" font-size="16" letter-spacing="4" text-anchor="end" opacity=".6">01 — 07</text>
+  <rect width="1200" height="900" filter="url(#grain)" opacity=".4"/>
+</svg>

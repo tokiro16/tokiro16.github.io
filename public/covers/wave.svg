@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title">
+  <title id="title">深蓝夜色中的橙色圆与白色波浪线</title>
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".1"/></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" fill="#1c2a33"/>
+  <circle cx="810" cy="310" r="210" fill="#e26b3d"/>
+  <g fill="none" stroke="#f3ecdf" stroke-width="1.4" opacity=".8">
+    <path d="M-40 520c160-110 280 110 440 0s280 110 440 0 280 110 440 0"/>
+    <path d="M-40 590c160-110 280 110 440 0s280 110 440 0 280 110 440 0"/>
+    <path d="M-40 660c160-110 280 110 440 0s280 110 440 0 280 110 440 0"/>
+    <path d="M-40 730c160-110 280 110 440 0s280 110 440 0 280 110 440 0"/>
+    <path d="M-40 800c160-110 280 110 440 0s280 110 440 0 280 110 440 0"/>
+  </g>
+  <text x="78" y="118" fill="#f3ecdf" font-family="Arial, sans-serif" font-size="17" letter-spacing="8" opacity=".66">05 / PHYSICS</text>
+  <text x="76" y="260" fill="#f3ecdf" font-family="Georgia, 'Times New Roman', serif" font-size="112" letter-spacing="-4">Why,</text>
+  <text x="78" y="366" fill="#e26b3d" font-family="Georgia, 'Times New Roman', serif" font-size="112" font-style="italic" letter-spacing="-3">exactly?</text>
+  <text x="1118" y="838" fill="#f3ecdf" font-family="Arial, sans-serif" font-size="14" letter-spacing="4" text-anchor="end" opacity=".5">EVERYDAY / PHYSICS</text>
+  <rect width="1200" height="900" filter="url(#grain)" opacity=".4"/>
+</svg>

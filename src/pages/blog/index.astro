@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import Icon from '../../components/Icon.astro';
+import { getAllPosts } from '../../lib/posts';
+import { url } from '../../lib/urls';
+
+const posts = getAllPosts();
+const categories = [...new Set(posts.map((post) => post.category))];
+---
+
+<BaseLayout
+  title="文章"
+  description="时六的全部文章：关于玩乐、游戏、物理、八卦、计算机与美妆穿搭的记录。"
+>
+  <header class="page-header container">
+    <div>
+      <p class="eyebrow">Archive / 文章</p>
+      <h1 class="page-title">所有<br /><em>写下的。</em></h1>
+    </div>
+    <p class="page-intro">
+      目前有 <strong>{posts.length} 篇文章</strong>，分布在 {categories.length} 个栏目里。按主题筛选，或者直接往下读。
+    </p>
+  </header>
+
+  <div class="container">
+    <div class="filter-bar">
+      <div class="filter-chips" data-filter-chips>
+        <button class="filter-chip is-active" type="button" data-filter="all">全部 <span>{String(posts.length).padStart(2, '0')}</span></button>
+        {
+          categories.map((category) => {
+            const count = posts.filter((post) => post.category === category).length;
+            return (
+              <button class="filter-chip" type="button" data-filter={category}>
+                {category} <span>{String(count).padStart(2, '0')}</span>
+              </button>
+            );
+          })
+        }
+      </div>
+      <span data-filter-count>{posts.length} POSTS</span>
+    </div>
+
+    <div class="post-grid" data-post-grid>
+      {posts.map((post, index) => <PostCard post={post} index={index + 1} />)}
+    </div>
+
+    <p class="search-empty" data-empty-filter hidden>这个栏目还没有文章。</p>
+
+    <div style="display: flex; justify-content: center; padding-block: 1rem 4rem;">
+      <a class="text-link" href={url('/tags/')} style="margin: 0;">
+        按标签浏览 <Icon name="arrow-up-right" size={12} />
+      </a>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  const chips = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-filter]'));
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('.post-card'));
+  const count = document.querySelector<HTMLElement>('[data-filter-count]');
+  const empty = document.querySelector<HTMLElement>('[data-empty-filter]');
+
+  function applyFilter(filter: string) {
+    let visible = 0;
+
+    for (const card of cards) {
+      const match = filter === 'all' || card.dataset.category === filter;
+      card.hidden = !match;
+      if (match) visible += 1;
+    }
+
+    for (const chip of chips) {
+      chip.classList.toggle('is-active', (chip.dataset.filter || 'all') === filter);
+    }
+
+    if (count) count.textContent = `${visible} POSTS`;
+    if (empty) empty.hidden = visible !== 0;
+
+    const params = new URLSearchParams(window.location.search);
+    if (filter === 'all') params.delete('category');
+    else params.set('category', filter);
+    const query = params.toString();
+    history.replaceState(null, '', `${window.location.pathname}${query ? `?${query}` : ''}`);
+  }
+
+  const initial = new URLSearchParams(window.location.search).get('category') || 'all';
+  applyFilter(initial);
+
+  for (const chip of chips) {
+    chip.addEventListener('click', () => applyFilter(chip.dataset.filter || 'all'));
+  }
+</script>

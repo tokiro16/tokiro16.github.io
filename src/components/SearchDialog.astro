@@ -1,0 +1,36 @@
+---
+import Icon from './Icon.astro';
+---
+
+<dialog class="search-dialog" id="search-dialog" aria-labelledby="search-title">
+  <div class="search-shell">
+    <div class="search-head">
+      <Icon name="search" size={18} />
+      <h2 class="visually-hidden" id="search-title">搜索文章</h2>
+      <input
+        class="search-input"
+        type="search"
+        placeholder="搜索标题、标签或关键词…"
+        autocomplete="off"
+        spellcheck="false"
+        data-search-input
+      />
+      <button class="search-close" type="button" data-search-close aria-label="关闭搜索">ESC</button>
+    </div>
+
+    <div class="search-meta">
+      <span>SEARCH / 文章检索</span>
+      <span data-search-count>输入关键词开始</span>
+    </div>
+
+    <div class="search-results" data-search-results aria-live="polite">
+      <p class="search-loading">正在建立索引…</p>
+    </div>
+
+    <div class="search-foot">
+      <span><kbd>↑</kbd><kbd>↓</kbd> 选择</span>
+      <span><kbd>↵</kbd> 打开</span>
+      <span><kbd>ESC</kbd> 关闭</span>
+    </div>
+  </div>
+</dialog>

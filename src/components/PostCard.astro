@@ -1,0 +1,39 @@
+---
+import type { Post } from '../lib/posts';
+import PostCover from './PostCover.astro';
+
+interface Props {
+  post: Post;
+  index?: number;
+}
+
+const { post, index = 1 } = Astro.props;
+const date = new Date(post.date);
+const dateLabel = `${date.getUTCFullYear()}.${String(date.getUTCMonth() + 1).padStart(2, '0')}`;
+---
+
+<article class="post-card" data-reveal data-delay={String(index % 4)} data-category={post.category}>
+  <a class="card-media" href={post.href} aria-label={`阅读《${post.title}》`}>
+    <PostCover name={post.cover} alt={post.title} />
+    <span class="card-index">{String(index).padStart(2, '0')}</span>
+  </a>
+
+  <div class="card-body">
+    <div class="card-kicker">
+      <span class="category">{post.category}</span>
+      <span aria-hidden="true">—</span>
+      <time datetime={post.date}>{dateLabel}</time>
+    </div>
+
+    <h2 class="card-title">
+      <a href={post.href}>{post.title}</a>
+    </h2>
+
+    <p class="card-desc">{post.description}</p>
+
+    <div class="card-foot">
+      <span>{post.tags.slice(0, 2).join(' · ')}</span>
+      <span class="read-time">{post.readingTime} MIN</span>
+    </div>
+  </div>
+</article>

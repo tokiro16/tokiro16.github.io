@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getAllTags, getPostsByTag, type Post } from '../../lib/posts';
+import { url } from '../../lib/urls';
+
+export function getStaticPaths() {
+  return getAllTags().map(({ tag }) => ({
+    params: { tag },
+    props: { tag, posts: getPostsByTag(tag) },
+  }));
+}
+
+interface Props {
+  tag: string;
+  posts: Post[];
+}
+
+const { tag, posts } = Astro.props;
+---
+
+<BaseLayout
+  title={`标签：${tag}`}
+  description={`时六博客中所有关于「${tag}」的文章，共 ${posts.length} 篇。`}
+>
+  <header class="page-header container">
+    <div>
+      <p class="eyebrow">Tag / 标签</p>
+      <h1 class="page-title">#<em>{tag}</em></h1>
+    </div>
+    <p class="page-intro">
+      共 <strong>{posts.length} 篇文章</strong>归在这个标签下。标签不是分类，只是一些愿意彼此靠近的句子。
+    </p>
+  </header>
+
+  <div class="container">
+    <div class="tag-page-head">
+      <a class="back-link" href={url('/tags/')}>← 所有标签</a>
+      <span class="count">{String(posts.length).padStart(2, '0')} POSTS</span>
+    </div>
+
+    <div class="post-grid">
+      {posts.map((post, index) => <PostCard post={post} index={index + 1} />)}
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title">
+  <title id="title">黑白抽象夜景与巨大的圆形光源</title>
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".95" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".16"/></feComponentTransfer>
+    </filter>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0c0c0b" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0c0c0b" stop-opacity=".9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="#111110"/>
+  <circle cx="795" cy="350" r="255" fill="#efe9dd"/>
+  <g fill="#111110">
+    <rect x="665" y="300" width="14" height="380"/>
+    <rect x="795" y="300" width="8" height="380"/>
+    <rect x="910" y="300" width="22" height="380"/>
+    <rect x="740" y="575" width="110" height="14"/>
+  </g>
+  <g stroke="#efe9dd" stroke-width="1" opacity=".22">
+    <path d="M60 650h1080M60 700h1080M60 750h1080M60 800h1080"/>
+    <path d="M150 560v270M300 520v310M450 480v350M600 450v380M750 450v380M900 480v350M1050 520v310"/>
+  </g>
+  <rect y="540" width="1200" height="360" fill="url(#fade)"/>
+  <text x="78" y="118" fill="#efe9dd" font-family="Arial, sans-serif" font-size="17" letter-spacing="8" opacity=".6">06 / COMPUTER</text>
+  <text x="76" y="780" fill="#efe9dd" font-family="Georgia, 'Times New Roman', serif" font-size="156" letter-spacing="-7">36KEY</text>
+  <text x="82" y="836" fill="#efe9dd" font-family="Arial, sans-serif" font-size="17" letter-spacing="6" opacity=".55">SPLIT KEYBOARD / DAILY DRIVER</text>
+  <rect width="1200" height="900" filter="url(#grain)" opacity=".65"/>
+</svg>

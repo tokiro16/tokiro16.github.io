@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title">
+  <title id="title">橄榄绿与陶土色的层叠拱门</title>
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".13"/></feComponentTransfer>
+    </filter>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e3dccd"/>
+      <stop offset="1" stop-color="#cfc6b2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#sky)"/>
+  <path d="M230 820V405a375 375 0 0 1 750 0v415Z" fill="#6f7551"/>
+  <path d="M335 820V440a270 270 0 0 1 540 0v380Z" fill="#d9542b"/>
+  <path d="M440 820V480a165 165 0 0 1 330 0v340Z" fill="#e3dccd"/>
+  <path d="M505 820V515a100 100 0 0 1 200 0v305Z" fill="#24241f"/>
+  <g stroke="#1a1916" stroke-opacity=".35">
+    <path d="M42 820h1116"/>
+    <path d="M80 120h1040"/>
+  </g>
+  <text x="76" y="102" fill="#1a1916" font-family="Arial, sans-serif" font-size="17" letter-spacing="7" opacity=".68">04 / PLAY</text>
+  <text x="75" y="790" fill="#f6f0e5" font-family="Georgia, 'Times New Roman', serif" font-size="96" letter-spacing="-3">The City</text>
+  <text x="1118" y="102" fill="#1a1916" font-family="Georgia, serif" font-size="16" letter-spacing="4" text-anchor="end" opacity=".62">2026</text>
+  <rect width="1200" height="900" filter="url(#grain)" opacity=".38"/>
+</svg>

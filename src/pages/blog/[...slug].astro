@@ -1,0 +1,167 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE } from '../../config';
+import { formatDate } from '../../lib/format';
+import { getAllPosts, getAdjacentPosts, getRelatedPosts, type Post } from '../../lib/posts';
+import { url } from '../../lib/urls';
+
+export function getStaticPaths() {
+  return getAllPosts().map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props;
+const { previous, next } = getAdjacentPosts(post.slug);
+const related = getRelatedPosts(post, 3);
+const siteUrl = (Astro.site?.toString() || 'https://tokiro16.github.io').replace(/\/$/, '');
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.title,
+  description: post.description,
+  datePublished: post.date,
+  dateModified: post.updated || post.date,
+  author: {
+    '@type': 'Person',
+    name: SITE.author,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: SITE.title,
+  },
+  mainEntityOfPage: `${siteUrl}${post.href}`,
+  keywords: post.tags.join(', '),
+  articleSection: post.category,
+  inLanguage: 'zh-CN',
+};
+---
+
+<BaseLayout
+  title={post.title}
+  description={post.description}
+  type="article"
+  publishedTime={post.date}
+  modifiedTime={post.updated}
+  progress
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <article>
+    <header class="article-header">
+      <div class="container">
+        <div class="article-kicker">
+          <a href={url('/blog/')}>文章</a>
+          <span aria-hidden="true">/</span>
+          <span class="category">{post.category}</span>
+          <span aria-hidden="true">/</span>
+          <time datetime={post.date}>{formatDate(post.date)}</time>
+        </div>
+
+        <h1 class="article-title">{post.title}</h1>
+        <p class="article-deck">{post.description}</p>
+
+        <div class="article-meta">
+          <span class="article-meta-item">
+            <Icon name="calendar" size={13} />
+            <time datetime={post.date}>{formatDate(post.date)}</time>
+          </span>
+          <span class="article-meta-item">
+            <Icon name="clock" size={13} />
+            {post.readingTime} 分钟阅读
+          </span>
+          <span class="article-meta-item">文 / {SITE.author}</span>
+
+          <div class="article-meta-tags" aria-label="文章标签">
+            {post.tags.map((tag) => (
+              <a class="tag" href={url(`/tags/${tag}/`)}>#{tag}</a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container article-layout">
+      {post.toc.length > 0 && (
+        <aside class="toc" aria-label="文章目录">
+          <p class="toc-label">Contents / 目录</p>
+          <ol>
+            {post.toc.map((item) => (
+              <li data-depth={item.depth}>
+                <a href={`#${item.id}`}>{item.text}</a>
+              </li>
+            ))}
+          </ol>
+        </aside>
+      )}
+
+      <div class="prose" set:html={post.html} />
+
+      <aside class="article-aside" aria-label="文章信息">
+        <div class="article-aside-inner">
+          <span class="article-aside-label">Colophon / 本文</span>
+          <span class="aside-rule" aria-hidden="true"></span>
+          <p>写于 {formatDate(post.date)}<br />{SITE.location}</p>
+          {post.updated && <p>最后更新于 {formatDate(post.updated)}</p>}
+          <p>全文约 {post.readingTime} 分钟阅读。未经允许，请勿转载。</p>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="container article-footer">
+      <div class="article-sign">
+        <p>谢谢你读到这里。如果愿意，欢迎从 RSS 订阅这个博客。</p>
+        <span class="sign-mark" aria-hidden="true">{SITE.name.slice(0, 1)}</span>
+      </div>
+
+      <div class="article-tags" aria-label="文章标签">
+        {post.tags.map((tag) => (
+          <a class="tag" href={url(`/tags/${tag}/`)}>#{tag}</a>
+        ))}
+      </div>
+    </footer>
+  </article>
+
+  {
+    related.length > 0 && (
+      <section class="related container">
+        <div class="section-head">
+          <div class="section-heading">
+            <span class="eyebrow">Keep reading / 继续阅读</span>
+            <h2 class="section-title">也许你会喜欢</h2>
+          </div>
+          <a class="section-link" href={url('/blog/')}>全部文章 <Icon name="arrow-up-right" size={12} /></a>
+        </div>
+
+        <div class="post-grid">
+          {related.map((item, index) => <PostCard post={item} index={index + 1} />)}
+        </div>
+      </section>
+    )
+  }
+
+  <nav class="post-nav container" aria-label="文章导航">
+    {previous && (
+      <a href={previous.href}>
+        <span class="nav-label">← Previous / 上一篇</span>
+        <span class="nav-title">{previous.title}</span>
+      </a>
+    )}
+    {next && (
+      <a href={next.href}>
+        <span class="nav-label">Next / 下一篇 →</span>
+        <span class="nav-title">{next.title}</span>
+      </a>
+    )}
+  </nav>
+
+  <div style="height: clamp(3rem, 7vw, 6rem);"></div>
+</BaseLayout>

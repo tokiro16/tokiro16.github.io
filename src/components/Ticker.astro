@@ -1,0 +1,25 @@
+---
+const items = [
+  '玩乐',
+  '游戏',
+  '物理',
+  '八卦',
+  '计算机',
+  '美妆穿搭',
+  '保持好奇',
+  '时六',
+  'SHILIU',
+  '2026',
+];
+---
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <div class="ticker-group">
+      {items.map((item) => <span class="ticker-item">{item}</span>)}
+    </div>
+    <div class="ticker-group">
+      {items.map((item) => <span class="ticker-item">{item}</span>)}
+    </div>
+  </div>
+</div>
