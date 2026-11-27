@@ -94,9 +94,9 @@ function renderMarkdown(raw: string): { html: string; toc: TocItem[] } {
   const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
   if (basePath) {
     const prefix = basePath.slice(1);
-    html = html.replace(/href="\/(?!\/)([^"]*)"/g, (full, path: string) => {
+    html = html.replace(/(href|src)="\/(?!\/)([^"]*)"/g, (full, attribute: string, path: string) => {
       if (path === prefix || path.startsWith(`${prefix}/`)) return full;
-      return `href="${basePath}/${path}"`;
+      return `${attribute}="${basePath}/${path}"`;
     });
   }
 

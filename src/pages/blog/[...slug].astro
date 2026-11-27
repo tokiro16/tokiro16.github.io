@@ -148,20 +148,22 @@ const jsonLd = {
     )
   }
 
-  <nav class="post-nav container" aria-label="文章导航">
-    {previous && (
-      <a href={previous.href}>
-        <span class="nav-label">← Previous / 上一篇</span>
-        <span class="nav-title">{previous.title}</span>
-      </a>
-    )}
-    {next && (
-      <a href={next.href}>
-        <span class="nav-label">Next / 下一篇 →</span>
-        <span class="nav-title">{next.title}</span>
-      </a>
-    )}
-  </nav>
+  {(previous || next) && (
+    <nav class="post-nav container" aria-label="文章导航">
+      {previous && (
+        <a href={previous.href}>
+          <span class="nav-label">← Previous / 上一篇</span>
+          <span class="nav-title">{previous.title}</span>
+        </a>
+      )}
+      {next && (
+        <a href={next.href}>
+          <span class="nav-label">Next / 下一篇 →</span>
+          <span class="nav-title">{next.title}</span>
+        </a>
+      )}
+    </nav>
+  )}
 
   <div style="height: clamp(3rem, 7vw, 6rem);"></div>
 </BaseLayout>

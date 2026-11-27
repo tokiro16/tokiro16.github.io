@@ -2,7 +2,9 @@
 
 一个可以直接部署到 GitHub Pages 的个人博客，使用 [Astro](https://astro.build/) 构建。
 
-暖色纸张质感、杂志式排版、深浅色模式、文章搜索、标签归档、RSS 与 SEO 都已经准备好。内容围绕玩乐、游戏、物理、八卦、计算机与美妆穿搭展开。
+线上地址：<https://tokiro16.github.io/>
+
+暖色纸张质感、杂志式排版、深浅色模式、文章搜索、标签归档、RSS 与 SEO 都已经准备好。内容围绕玩乐、游戏、物理、八卦、计算机与美妆穿搭展开，目前保留了一篇真实的串流折腾日志。
 
 ![时六博客预览](docs/preview.jpg)
 
@@ -144,7 +146,7 @@ BASE_PATH: /
 
 - [ ] `src/config.ts` 里的名字、站点简介、社交链接都是最新的
 - [ ] `astro.config.mjs` 的 `site` 或工作流里的 `SITE_URL` 是最终域名
-- [ ] 示例文章已删除或替换
+- [x] 已删除占位文章，只保留真实日志
 - [ ] 仓库 **Settings → Pages → Source** 已选择 **GitHub Actions**
 - [ ] `npm run build` 本地通过
 

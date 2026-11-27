@@ -11,7 +11,6 @@ import { url } from '../lib/urls';
 const featured = getFeaturedPost();
 const recent = getRecentPosts(5, featured.slug);
 const allPosts = getAllPosts();
-const categories = [...new Set(allPosts.map((post) => post.category))];
 ---
 
 <BaseLayout description={SITE.description}>
@@ -43,7 +42,7 @@ const categories = [...new Set(allPosts.map((post) => post.category))];
           </div>
           <div class="hero-meta-item">
             <dt>Currently</dt>
-            <dd>{allPosts.length} 篇文章 · {categories.length} 个栏目</dd>
+            <dd>{allPosts.length} 篇日志 · {SITE.topics.length} 个栏目</dd>
           </div>
         </dl>
       </div>
@@ -75,21 +74,23 @@ const categories = [...new Set(allPosts.map((post) => post.category))];
     </div>
   </section>
 
-  <section class="section section--tight">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <div class="section-heading">
-          <span class="eyebrow">Latest / 最新</span>
-          <h2 class="section-title">最近写下的</h2>
+  {recent.length > 0 && (
+    <section class="section section--tight">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div class="section-heading">
+            <span class="eyebrow">Latest / 最新</span>
+            <h2 class="section-title">最近写下的</h2>
+          </div>
+          <a class="section-link" href={url('/blog/')}>查看全部 <Icon name="arrow-up-right" size={12} /></a>
         </div>
-        <a class="section-link" href={url('/blog/')}>查看全部 <Icon name="arrow-up-right" size={12} /></a>
-      </div>
 
-      <div class="post-list">
-        {recent.map((post, index) => <PostRow post={post} index={index + 2} />)}
+        <div class="post-list">
+          {recent.map((post, index) => <PostRow post={post} index={index + 2} />)}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  )}
 
   <section class="section section--tight">
     <div class="container">

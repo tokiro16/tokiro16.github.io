@@ -2,11 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostCard from '../../components/PostCard.astro';
 import Icon from '../../components/Icon.astro';
+import { SITE } from '../../config';
 import { getAllPosts } from '../../lib/posts';
 import { url } from '../../lib/urls';
 
 const posts = getAllPosts();
-const categories = [...new Set(posts.map((post) => post.category))];
+const categories = SITE.topics.map((topic) => topic.name);
 ---
 
 <BaseLayout
@@ -19,7 +20,7 @@ const categories = [...new Set(posts.map((post) => post.category))];
       <h1 class="page-title">所有<br /><em>写下的。</em></h1>
     </div>
     <p class="page-intro">
-      目前有 <strong>{posts.length} 篇文章</strong>，分布在 {categories.length} 个栏目里。按主题筛选，或者直接往下读。
+      目前有 <strong>{posts.length} 篇日志</strong>，栏目还在慢慢填。按主题筛选，或者直接往下读。
     </p>
   </header>
 
