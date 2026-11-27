@@ -2818,6 +2818,19 @@
       url('../assets/images/kuromi-bg.jpg');
   }
 
+  @media (max-width: 860px) {
+    body {
+      background-image: url('../assets/images/kuromi-bg-mobile.jpg');
+      background-position: center top;
+    }
+
+    html[data-theme='dark'] body {
+      background-image:
+        linear-gradient(rgba(15, 10, 15, 0.8), rgba(15, 10, 15, 0.88)),
+        url('../assets/images/kuromi-bg-mobile.jpg');
+    }
+  }
+
   body::before {
     opacity: 0.045;
   }

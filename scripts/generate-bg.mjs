@@ -64,4 +64,50 @@ await sharp(Buffer.from(svg))
   .jpeg({ quality: 88, mozjpeg: true })
   .toFile('src/assets/images/kuromi-bg.jpg');
 
-console.log('Generated src/assets/images/kuromi-bg.jpg');
+const mobileSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="2160" viewBox="0 0 1000 2160">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff9fc"/>
+      <stop offset=".38" stop-color="#f8eef3"/>
+      <stop offset=".72" stop-color="#f5e2eb"/>
+      <stop offset="1" stop-color="#efd3e0"/>
+    </linearGradient>
+    <radialGradient id="veil" cx="50%" cy="47%" r="68%">
+      <stop offset="0" stop-color="#fff9fc" stop-opacity=".96"/>
+      <stop offset=".62" stop-color="#fff9fc" stop-opacity=".68"/>
+      <stop offset="1" stop-color="#fff9fc" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="gingham" width="58" height="58" patternUnits="userSpaceOnUse">
+      <path d="M0 29h58M29 0v58" stroke="#ff2e7e" stroke-opacity=".055" stroke-width="2"/>
+      <path d="M0 14h58M14 0v58" stroke="#b58cff" stroke-opacity=".035" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1000" height="2160" fill="url(#paper)"/>
+  <rect width="1000" height="2160" fill="url(#gingham)"/>
+  <circle cx="960" cy="200" r="330" fill="#ffc1d7" opacity=".26"/>
+  <circle cx="60" cy="1980" r="360" fill="#c7a6ff" opacity=".14"/>
+  <g fill="none" stroke="#ff2e7e" stroke-opacity=".1">
+    <circle cx="500" cy="1080" r="420"/>
+    <circle cx="500" cy="1080" r="520" stroke-dasharray="4 16"/>
+  </g>
+  <rect width="1000" height="2160" fill="url(#veil)"/>
+
+  ${sticker('kuromi-star', -20, 600, 118, 118, 18, 0.26)}
+  ${sticker('kuromi-heart', 832, 500, 132, 104, -10, 0.28)}
+  ${sticker('kuromi-bow', -36, 1040, 148, 102, -14, 0.26)}
+  ${sticker('kuromi-devil', 772, 1160, 158, 198, 9, 0.26)}
+
+  <g fill="#ff2e7e" opacity=".18">
+    <path d="m500 116 7 18 18 7-18 7-7 18-7-18-18-7 18-7Z"/>
+    <path d="m180 1780 6 15 15 6-15 6-6 15-6-15-15-6 15-6Z"/>
+    <path d="m860 1600 6 15 15 6-15 6-6 15-6-15-15-6 15-6Z"/>
+  </g>
+</svg>`;
+
+writeFileSync('src/assets/images/kuromi-bg-mobile.svg', mobileSvg, 'utf8');
+await sharp(Buffer.from(mobileSvg))
+  .jpeg({ quality: 88, mozjpeg: true })
+  .toFile('src/assets/images/kuromi-bg-mobile.jpg');
+
+console.log('Generated desktop and mobile background images');

@@ -8,6 +8,8 @@
 
 ![时六博客预览](docs/preview.jpg)
 
+![时六博客手机预览](docs/preview-mobile.jpg)
+
 ## 已经包含
 
 - 首页：大标题、精选文章、最新文章、六个主题栏目、关于区

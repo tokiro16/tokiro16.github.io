@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="2160" viewBox="0 0 1000 2160">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff9fc"/>
+      <stop offset=".38" stop-color="#f8eef3"/>
+      <stop offset=".72" stop-color="#f5e2eb"/>
+      <stop offset="1" stop-color="#efd3e0"/>
+    </linearGradient>
+    <radialGradient id="veil" cx="50%" cy="47%" r="68%">
+      <stop offset="0" stop-color="#fff9fc" stop-opacity=".96"/>
+      <stop offset=".62" stop-color="#fff9fc" stop-opacity=".68"/>
+      <stop offset="1" stop-color="#fff9fc" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="gingham" width="58" height="58" patternUnits="userSpaceOnUse">
+      <path d="M0 29h58M29 0v58" stroke="#ff2e7e" stroke-opacity=".055" stroke-width="2"/>
+      <path d="M0 14h58M14 0v58" stroke="#b58cff" stroke-opacity=".035" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1000" height="2160" fill="url(#paper)"/>
+  <rect width="1000" height="2160" fill="url(#gingham)"/>
+  <circle cx="960" cy="200" r="330" fill="#ffc1d7" opacity=".26"/>
+  <circle cx="60" cy="1980" r="360" fill="#c7a6ff" opacity=".14"/>
+  <g fill="none" stroke="#ff2e7e" stroke-opacity=".1">
+    <circle cx="500" cy="1080" r="420"/>
+    <circle cx="500" cy="1080" r="520" stroke-dasharray="4 16"/>
+  </g>
+  <rect width="1000" height="2160" fill="url(#veil)"/>
+
+  <g transform="translate(-20 600) rotate(18 59 59)" opacity="0.26"><svg width="118" height="118" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-labelledby="title">
+  <title id="title">黑粉小星星贴纸</title>
+  <g stroke="#171217" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+    <path d="m110 16 23 54 58 5-44 39 13 57-50-31-50 31 13-57L29 75l58-5Z" fill="#171217"/>
+    <path d="m110 39 15 36 38 3-29 26 9 38-33-21-33 21 9-38-29-26 38-3Z" fill="#ff2e7e" stroke-width="4"/>
+    <circle cx="92" cy="106" r="6" fill="#171217" stroke="none"/>
+    <circle cx="128" cy="106" r="6" fill="#171217" stroke="none"/>
+    <path d="M100 125q10 10 20 0" fill="none" stroke-width="4"/>
+    <path d="M98 88c-5-8-15-6-15 4M122 88c5-8 15-6 15 4" fill="none" stroke="#fff1f6" stroke-width="3"/>
+    <path d="M62 56l-10-10M158 56l10-10" stroke="#b58cff" stroke-width="5"/>
+  </g>
+</svg>
+</g>
+  <g transform="translate(832 500) rotate(-10 66 52)" opacity="0.28"><svg width="132" height="104" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 220" role="img" aria-labelledby="title">
+  <title id="title">黑粉蝙蝠心贴纸</title>
+  <g stroke="#171217" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M78 105C45 76 20 78 14 105c-5 23 18 49 51 58 12 3 18-4 22-18" fill="#171217"/>
+    <path d="M202 105c33-29 58-27 64 0 5 23-18 49-51 58-12 3-18-4-22-18" fill="#171217"/>
+    <path d="M75 111C52 91 35 92 31 109c-3 15 12 34 35 41 9 2 12-2 15-12" fill="#b58cff" stroke-width="4"/>
+    <path d="M205 111c23-20 40-19 44-2 3 15-12 34-35 41-9 2-12-2-15-12" fill="#b58cff" stroke-width="4"/>
+    <path d="M140 202c-40-31-75-57-75-95 0-31 22-48 47-48 14 0 24 6 28 16 4-10 14-16 28-16 25 0 47 17 47 48 0 38-35 64-75 95Z" fill="#171217"/>
+    <path d="M140 183c-32-26-58-47-58-76 0-22 15-35 32-35 10 0 18 4 22 13l4 9 4-9c4-9 12-13 22-13 17 0 32 13 32 35 0 29-26 50-58 76Z" fill="#ff2e7e" stroke-width="4"/>
+    <path d="M140 149c-9-9-19-17-19-28 0-8 6-14 13-14 4 0 7 2 9 5 2-3 5-5 9-5 7 0 13 6 13 14 0 11-10 19-19 28Z" fill="#fff1f6" stroke-width="4"/>
+    <circle cx="130" cy="126" r="2.7" fill="#171217" stroke="none"/>
+    <circle cx="138" cy="126" r="2.7" fill="#171217" stroke="none"/>
+    <path d="M131 133h6" stroke="#171217" stroke-width="3"/>
+    <path d="M98 58l-10-12M182 58l10-12" stroke="#ff2e7e" stroke-width="5"/>
+  </g>
+</svg>
+</g>
+  <g transform="translate(-36 1040) rotate(-14 74 51)" opacity="0.26"><svg width="148" height="102" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 180" role="img" aria-labelledby="title">
+  <title id="title">黑粉蝴蝶结贴纸</title>
+  <g stroke="#171217" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M116 92C83 54 31 43 22 76c-8 31 26 61 60 58 16-1 26-12 34-42Z" fill="#171217"/>
+    <path d="M144 92c33-38 85-49 94-16 8 31-26 61-60 58-16-1-26-12-34-42Z" fill="#171217"/>
+    <path d="M104 82C80 59 48 53 41 73c-6 19 17 38 40 36 10-1 16-7 23-27Z" fill="#ff2e7e" stroke-width="4"/>
+    <path d="M156 82c24-23 56-29 63-9 6 19-17 38-40 36-10-1-16-7-23-27Z" fill="#ff2e7e" stroke-width="4"/>
+    <path d="M110 126c-8 22-21 34-36 37M150 126c8 22 21 34 36 37" fill="none" stroke="#ff2e7e" stroke-width="6"/>
+    <rect x="106" y="75" width="48" height="55" rx="16" fill="#b58cff"/>
+    <path d="M130 86c9 0 16 6 16 14 0 9-8 15-16 24-8-9-16-15-16-24 0-8 7-14 16-14Z" fill="#fff1f6" stroke-width="4"/>
+    <circle cx="124" cy="98" r="3" fill="#171217" stroke="none"/>
+    <circle cx="136" cy="98" r="3" fill="#171217" stroke="none"/>
+    <path d="M126 107h8" stroke="#171217" stroke-width="3"/>
+    <path d="M96 62l-12-9M164 62l12-9M100 72l-10-3M160 72l10-3" stroke="#fff1f6" stroke-width="3"/>
+  </g>
+</svg>
+</g>
+  <g transform="translate(772 1160) rotate(9 79 99)" opacity="0.26"><svg width="158" height="198" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300" role="img" aria-labelledby="title">
+  <title id="title">黑粉小恶魔兔贴纸</title>
+  <g stroke="#171217" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M188 238c31 8 29 36 12 46" fill="none" stroke-width="9"/>
+    <circle cx="202" cy="286" r="9" fill="#ff2e7e"/>
+    <path d="M58 132C29 96 17 54 38 35c21-17 43 12 60 65" fill="#171217"/>
+    <path d="M182 132c29-36 41-78 20-97-21-17-43 12-60 65" fill="#171217"/>
+    <path d="M61 113C43 84 37 60 47 49c11-10 24 9 37 49" fill="#ff2e7e" stroke-width="4"/>
+    <path d="M179 113c18-29 24-53 14-64-11-10-24 9-37 49" fill="#ff2e7e" stroke-width="4"/>
+    <circle cx="38" cy="32" r="12" fill="#ffc1d7"/>
+    <circle cx="202" cy="32" r="12" fill="#ffc1d7"/>
+    <path d="M42 126c0-44 34-74 78-74s78 30 78 74v102c0 23-18 40-41 40H83c-23 0-41-17-41-40Z" fill="#171217"/>
+    <path d="M64 140c7-16 20-24 34-24M176 140c-7-16-20-24-34-24" fill="none" stroke="#ff2e7e" stroke-width="4"/>
+    <ellipse cx="120" cy="170" rx="59" ry="61" fill="#fff1f6"/>
+    <path d="M104 190q16 13 32 0" fill="none" stroke-width="5"/>
+    <path d="m120 180-6 8h12Z" fill="#171217" stroke-width="3"/>
+    <ellipse cx="96" cy="164" rx="9" ry="13" fill="#171217" stroke="none"/>
+    <ellipse cx="144" cy="164" rx="9" ry="13" fill="#171217" stroke="none"/>
+    <circle cx="99" cy="160" r="3" fill="#fff1f6" stroke="none"/>
+    <circle cx="147" cy="160" r="3" fill="#fff1f6" stroke="none"/>
+    <circle cx="77" cy="190" r="8" fill="#ff8db8" stroke="none" opacity=".8"/>
+    <circle cx="163" cy="190" r="8" fill="#ff8db8" stroke="none" opacity=".8"/>
+    <path d="M120 104c8 0 14 6 14 13 0 9-7 15-14 21-7-6-14-12-14-21 0-7 6-13 14-13Z" fill="#ff2e7e" stroke-width="4"/>
+    <circle cx="115" cy="116" r="2.6" fill="#171217" stroke="none"/>
+    <circle cx="125" cy="116" r="2.6" fill="#171217" stroke="none"/>
+    <path d="M92 236c-24-16-43-8-37 13 5 18 27 17 40 1Z" fill="#ff2e7e"/>
+    <path d="M148 236c24-16 43-8 37 13-5 18-27 17-40 1Z" fill="#ff2e7e"/>
+    <circle cx="120" cy="244" r="11" fill="#b58cff"/>
+    <path d="M120 251v27M108 271l12 9 12-9" fill="none" stroke="#ff2e7e" stroke-width="5"/>
+  </g>
+</svg>
+</g>
+
+  <g fill="#ff2e7e" opacity=".18">
+    <path d="m500 116 7 18 18 7-18 7-7 18-7-18-18-7 18-7Z"/>
+    <path d="m180 1780 6 15 15 6-15 6-6 15-6-15-15-6 15-6Z"/>
+    <path d="m860 1600 6 15 15 6-15 6-6 15-6-15-15-6 15-6Z"/>
+  </g>
+</svg>
